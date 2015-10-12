@@ -1,3 +1,5 @@
+<!-- ss01 : Scott Stubbs 10/11/2015 changes to performance--> 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,6 +9,11 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
 
+<<<<<<< HEAD
+=======
+    <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
+    
+>>>>>>> origin/master
     <script>
       window.onload = (function(w,g){w['GoogleAnalyticsObject']=g;
       w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
@@ -14,6 +21,7 @@
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
     </script>
+<<<<<<< HEAD
 
     <!-- ss01 async these scripts -->
     <script async src="http://www.google-analytics.com/analytics.js"></script>
@@ -90,9 +98,18 @@
           header p { padding-left: 4.5em;}
         }
     </style>
+=======
+    
+    <script async src="http://www.google-analytics.com/analytics.js"></script> <!-- ss01 changed to async -->
+    <script async src="js/perfmatters.js"></script>
+
+>>>>>>> origin/master
   </head>
 
   <body>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/print.css" rel="stylesheet">
     <header>
       <a href="/"><img src="img/profilepic.jpg"></a>
       <p>Cameron Pittman<br><span>Course Developer</span></p>
@@ -123,7 +140,7 @@
           </li>
 
           <li>
-            <img style="width: 100px;" src="views/images/pizzeria.jpg">
+            <img style="width: 100px;" src="views/images/pizzeria.jpg">  <!-- ss01  I compressed this .jpg using pain.net -->
             <a href="views/pizza.html">Cam's Pizzeria</a>
             <p>Who wants a performant pizza?</p>
           </li>
