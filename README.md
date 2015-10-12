@@ -1,17 +1,25 @@
+NANO DEGREE - FRONT END WEB DEVERLOPER 
+PROJECT 4
+SCOTT STUBBS
+10-12-2015
+
+PROJECT DESCRIPTION:
 ## Website Performance Optimization portfolio project
-
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
-
-To get started, check out the repository, inspect the code,
-
-### Getting started
 
 ####Part 1: Optimize PageSpeed Insights score for index.html
 
-Some useful tips to help you get started:
+- I made the following modificaitons to enable the index.html run faster:
+    > Reduced the size of the image profilepic.jpg and pizzeria.jpg
+    > Changed the font family 
+    > Changed the js to run async on several
+    > Inlined the css to run after the js
 
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+- I hosted the webpage from my computer using Python and Ngrok.  (was a little bit of a task to get those suckers to load correctly on my Windows 10 installation with 4 shared users, but it was fun).
+ 
+- I tested the performance of the page on Google / PageSpeed Ingights.  Both are over 90 when I tested.
+
+
 
   ```bash
   $> cd /path/to/your-project-folder
