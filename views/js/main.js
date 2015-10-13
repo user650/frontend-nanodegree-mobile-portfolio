@@ -479,9 +479,9 @@ var resizePizzas = function(size) {
       default:
         console.log("Invalid size- it should be 1,2 or 3; size = " + size);
     }
-    var randomPizzas = document.querySelectorAll(".randomPizzaContainer");  // ss01 store the 
+    var randomPizzas = document.querySelectorAll(".randomPizzaContainer");  //  store the pizzas in these containers
     for (var i = 0; i < randomPizzas.length; i++) {
-      //randomPizzas[i].style.width = sizeSwitcher(size) * 100 + "%"; no longer call the sideswitcher function
+      //randomPizzas[i].style.width = sizeSwitcher(size) * 100 + "%"; // ss01 no longer call the sideswitcher function
       randomPizzas[i].style.width = newWidth + "%"; // the pizzas will be scaled to the new width
     }
   }
@@ -532,10 +532,15 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
   var items = document.querySelectorAll('.mover');
-  var scrollTop = (document.body.scrollTop / 1250);
+  var scrollTop = (document.body.scrollTop / 1250);  // ss01 make this calculation before the loop
+  var phaseArray = []; // ss01 prefill the phases before the loop
+  for (var i = 0; i < 4; i++) {
+    phaseArray.push(Math.sin(scrollTop + (i % 5)));
+  }
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin(scrollTop + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    //items[i].style.left = items[i].basicLeft + 100 * phaseArray[i % 5] + 'px';  // ss01 use the webkitTransform instead
+    var pizzaMove = items[i].basicLeft + 100 * phaseArray[i % 5] + 'px';
+    items[i].style.webkitTransform = "translateX("+ pizzaMove +")translateZ(0)";
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -553,19 +558,20 @@ window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
+  var screenHeight = window.screen.height;
   var cols = 8;
   var s = 256;
-  /* ss01 reduce the number of pizzas painted on the screen - you can't see all 200 of them 
-  for (var i = 0; i < 200; i++) { */
-  for (var i = 0; i < 32; i++) { 
+  var numPizzas = Math.floor(screenHeight / s) * cols; //ss01 reduce the number of pizzas painted on the screen - you can't see all 200 of them 
+  for (var i = 0; i < numPizzas; i++) { 
     var elem = document.createElement('img');
     elem.className = 'mover';
-    elem.src = "images/pizza_n2.png";
-    elem.style.height = "100px";
-    elem.style.width = "73.333px";
+    elem.src = "images/pizza_n3.png"; // ss01 super small .png file now
+    //elem.style.height = "100px"; // ss01 included in the style sheet now
+    //elem.style.width = "73.333px"; // ss01 included in the style sheet now
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
+    //document.getElementById("movingPizzas1").appendChild(elem); // ss01 getElementById is faster
   }
   updatePositions();
 });
