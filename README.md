@@ -1,81 +1,40 @@
-NANO DEGREE - FRONT END WEB DEVERLOPER 
+NANO DEGREE - FRONT END WEB DEVERLOPER
 PROJECT 4
 SCOTT STUBBS
 10-12-2015
+
 
 PROJECT DESCRIPTION:
 ## Website Performance Optimization portfolio project
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
+
 ####Part 1: Optimize PageSpeed Insights score for index.html
 
-- I made the following modificaitons to enable the index.html run faster:
-    > Reduced the size of the image profilepic.jpg and pizzeria.jpg
-    > Changed the font family 
-    > Changed the js to run async on several
-    > Inlined the css to run after the js
+> I made the following modifications to enable the index.html run faster:
+o Reduced the size of the image profilepic.jpg and pizzeria.jpg
+o Changed the font family 
+o Changed the js to run async on several
+o Inlined the css to run after the js
 
-- I hosted the webpage from my computer using Python and Ngrok.  (was a little bit of a task to get those suckers to load correctly on my Windows 10 installation with 4 shared users, but it was fun).
+> I hosted the webpage from my computer using Python and Ngrok.  (this was a little bit of a challenge to do on my Windows 10 installation with 4 shared users, but it was fun).
  
-- I tested the performance of the page on Google / PageSpeed Ingights.  Both are over 90 when I tested.
+> I tested the performance of the page on Google – PageSpeed Insights.  Both the desktop and mobile were over 90 when I tested.
 
-
-
-  ```bash
-  $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
-  ```
-
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
-
-  ``` bash
-  $> cd /path/to/your-project-folder
-  $> ngrok 8080
-  ```
-
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
-
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+> In order to reduce the frames per second on the pizza.html I did the following items:
+o Reduced the number of pizzas that float around from 200 to a number that is proportional to the screen height.
+o Got rid of the time consuming determine dx function
+o Made the change size slider pick a size as a direct percentage.
+o Used webkitTransform instead of the style.left to move floating pizzas.
+o Reduced the size of floating pizza .png by a lot
+o Put some of the style in the css instead of in the java script
+o Used the ever popular “will-change: transform” style thing for the .mover class.
 
-You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
+Some other notes:
 
-### Optimization Tips and Tricks
-* [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
-* [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
-* [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
-* [Avoiding Rendering Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css.html "render blocking css")
-* [Optimizing JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript.html "javascript")
-* [Measuring with Navigation Timing](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp.html "nav timing api"). We didn't cover the Navigation Timing API in the first two lessons but it's an incredibly useful tool for automated page profiling. I highly recommend reading.
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">The fewer the downloads, the better</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
+> I could not easily find a way to minify the code.  Google Page insights refers you to a link to a chrome extension that is no longer supported then that refers you back to page speed insights.  Since the files are so small I don’t think that the minify is going to really do much any way.
 
-### Customization with Bootstrap
-The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
-
-* <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
-* <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
-
-### Sample Portfolios
-
-Feeling uninspired by the portfolio? Here's a list of cool portfolios I found after a few minutes of Googling.
-
-* <a href="http://www.reddit.com/r/webdev/comments/280qkr/would_anybody_like_to_post_their_portfolio_site/">A great discussion about portfolios on reddit</a>
-* <a href="http://ianlunn.co.uk/">http://ianlunn.co.uk/</a>
-* <a href="http://www.adhamdannaway.com/portfolio">http://www.adhamdannaway.com/portfolio</a>
-* <a href="http://www.timboelaars.nl/">http://www.timboelaars.nl/</a>
-* <a href="http://futoryan.prosite.com/">http://futoryan.prosite.com/</a>
-* <a href="http://playonpixels.prosite.com/21591/projects">http://playonpixels.prosite.com/21591/projects</a>
-* <a href="http://colintrenter.prosite.com/">http://colintrenter.prosite.com/</a>
-* <a href="http://calebmorris.prosite.com/">http://calebmorris.prosite.com/</a>
-* <a href="http://www.cullywright.com/">http://www.cullywright.com/</a>
-* <a href="http://yourjustlucky.com/">http://yourjustlucky.com/</a>
-* <a href="http://nicoledominguez.com/portfolio/">http://nicoledominguez.com/portfolio/</a>
-* <a href="http://www.roxannecook.com/">http://www.roxannecook.com/</a>
-* <a href="http://www.84colors.com/portfolio.html">http://www.84colors.com/portfolio.html</a>
+> In some cases I got dramatically different fps when I re-ran my tests.  The floating pizzas via the scroll seemed to change fps a lot on different runs.  Rebooting, running the tests with a slower scroll vs a longer on, waiting before I scrolled all of these had a different effect on the FPS.  The changes for “will-change: tranform;” did not seem to do a whole lot. Neither did putting the style height and width in the style sheet instead of within the javascript.
