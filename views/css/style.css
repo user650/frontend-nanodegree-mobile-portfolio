@@ -1,4 +1,4 @@
-/** {
+/* {
   outline: 1px solid red !important;
 }*/
 * {
@@ -32,7 +32,7 @@ form {
 .mover {
   position: fixed;
   width: 73.333px;
-  height: 100px;
+  hieght: 100px;
   z-index: -1;
   will-change: tranform;
 }
